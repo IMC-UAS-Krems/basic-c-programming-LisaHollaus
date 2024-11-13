@@ -17,8 +17,8 @@ int main(int argc, char *argv[]) {
     // 1
     // When the program is called with a number of arguments different from 2, the code will output the following text to the standard output:
     if (argc != 3) {  // 3 = 2 arguments
-        printf("Incorrect usage. You provided %d arguments. The correct number of arguments is 2\n", argc);
-        return 0;
+        printf("Incorrect usage. You provided %d arguments. The correct number of arguments is 2\n", argc - 1);
+        //return 1; // stop the program
     }
 
 
@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
     // check if all arguments passed are integers greater than 0.
     if (rows < 0 || cols < 0) {
         printf("Incorrect usage. The parameters you provided are not positive integers\n");
-        return 0; // to stop the program
+        //return 1; // stop the program
     };
 
 
@@ -68,7 +68,7 @@ int main(int argc, char *argv[]) {
     };
 
     //  The last row ends with a carriage return
-    fprintf(pFile, "\r");
+    //fprintf(pFile, "\r");
 
     fclose(pFile); 
 
