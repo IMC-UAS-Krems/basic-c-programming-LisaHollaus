@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
     // When the program is called with a number of arguments different from 2, the code will output the following text to the standard output:
     if (argc != 3) {  // 3 = 2 arguments
         printf("Incorrect usage. You provided %d arguments. The correct number of arguments is 2\n", argc - 1);
-        return 1; // stop the program
+        return 0; // stop the program
     }
 
 
@@ -56,19 +56,20 @@ int main(int argc, char *argv[]) {
     
     // writting into the File with a nested for loop
     for (int i = 0; i < rows; i++) {
+        // inner loop
         for (int j = 0; j < cols; j++) {
-           fprintf(pFile, "%d", matrix[i][j]); 
+           fprintf(pFile, "%d", matrix[i][j]); // write number
            if (j + 1 != cols) {
-            fprintf(pFile, " "); // whitespace separator between each entry
-           } 
+            fprintf(pFile, " "); // add whitespace separator between each entry
+           };
         };   
+        // outer loop
         if (i + 1 != cols) {    
             fprintf(pFile, "\n"); // one row on each line and no whitespace at the end of each line
         } else {
             fprintf(pFile, "\r"); // The last row ends with a carriage return
-        }
+        };
     };
-
 
     fclose(pFile); 
 
@@ -77,6 +78,7 @@ int main(int argc, char *argv[]) {
     for (int i = 0; i < rows; i++) {
         free(matrix[i]); // free each row
     }
+
     free(matrix); // free pointer array
 
     return 0;
