@@ -29,7 +29,7 @@ int main(int argc, char *argv[]) {
     // check if all arguments passed are integers greater than 0.
     if (rows < 0 || cols < 0) {
         printf("Incorrect usage. The parameters you provided are not positive integers\n");
-        return 1; // stop the program
+        return 0; // stop the program
     };
 
 
