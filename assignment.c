@@ -61,14 +61,14 @@ int main(int argc, char *argv[]) {
            if (j + 1 != cols) {
             fprintf(pFile, " "); // whitespace separator between each entry
            } 
-           else {
+        };   
+        if (i + 1 != cols) {    
             fprintf(pFile, "\n"); // one row on each line and no whitespace at the end of each line
-           }
-        };
+        } else {
+            fprintf(pFile, "\r"); // The last row ends with a carriage return
+        }
     };
 
-    //  The last row ends with a carriage return
-    //fprintf(pFile, "\r");
 
     fclose(pFile); 
 
